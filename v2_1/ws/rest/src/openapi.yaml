@@ -379,6 +379,17 @@ components:
       schema:
         type: string
         pattern: '^(([A-Za-z][A-Za-z\d_-]*)(\.[A-Za-z][A-Za-z\d_-]*)*,)?[A-Za-z\d_@$-]+(\+([A-Za-z][A-Za-z\d_-]*(\.[A-Za-z][A-Za-z\d_-]*)*,)?[A-Za-z\d_@$-]+)*$'
+    resourceIDs:
+      in: path
+      name: resourceID
+      description: |
+        The id of the artefact to be returned.
+        
+        It is possible to set more than one id, using + as separator (e.g. CL_FREQ+CL_CONF_STATUS).
+      required: true
+      schema:
+        type: string
+        pattern: '^([A-Za-z\d_@$-]+(\+[A-Za-z\d_@$-]+)*)*$'
     startPeriod:
       in: query
       name: startPeriod
