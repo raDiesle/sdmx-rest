@@ -368,6 +368,17 @@ components:
       schema:
         type: string
         pattern: '^[\d]+(\.[\d]+)*$'
+    agencies:
+      in: path
+      name: agencyID
+      description: |
+        The agency maintaining the artefact to be returned. 
+        
+        It is possible to set more than one agency, using + as separator (e.g. BIS+ECB).
+      required: true
+      schema:
+        type: string
+        pattern: '^(([A-Za-z][A-Za-z\d_-]*)(\.[A-Za-z][A-Za-z\d_-]*)*,)?[A-Za-z\d_@$-]+(\+([A-Za-z][A-Za-z\d_-]*(\.[A-Za-z][A-Za-z\d_-]*)*,)?[A-Za-z\d_@$-]+)*$'
     startPeriod:
       in: query
       name: startPeriod
