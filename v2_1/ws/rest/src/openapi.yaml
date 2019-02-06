@@ -390,6 +390,17 @@ components:
       schema:
         type: string
         pattern: '^([A-Za-z\d_@$-]+(\+[A-Za-z\d_@$-]+)*)*$'
+    versions:
+      in: path
+      name: version
+      description: | 
+        The version of the artefact to be returned. 
+        
+        It is possible to set more than one version, using + as separator (e.g. 1.0+2.1).
+      required: true
+      schema:
+        type: string
+        pattern: '^[\d]+(\.[\d]+)*(\+[\d]+(\.[\d]+)*)*$'
     startPeriod:
       in: query
       name: startPeriod
