@@ -550,6 +550,26 @@ components:
         type: string
         enum: [allstubs, referencestubs, referencepartial, allcompletestubs, referencecompletestubs, full]
         default: full
+    references:
+      in: query
+      name: references
+      description: |
+        Instructs the web service to return (or not) the artefacts referenced by the artefact to be returned.
+        
+        Possible values are: 
+        
+        * `none`: No references will be returned
+        * `parents`: Returns the artefacts that use the artefact matching the query
+        * `parentsandsiblings`: Returns the artefacts that use the artefact matching the query, as well as the artefacts referenced by these artefacts
+        * `children`: Returns the artefacts referenced by the artefact to be returned
+        * `descendants`: References of references, up to any level, will be returned
+        * `all`: The combination of parentsandsiblings and descendants
+        * In addition, a concrete type of resource may also be used (for example, references=codelist).
+      required: false
+      schema:
+        type: string
+        enum: [none, parents, parentsandsiblings, children, descendants, all, datastructure, metadatastructure, categoryscheme, conceptscheme, codelist, hierarchicalcodelist, organisationscheme, agencyscheme, dataproviderscheme, dataconsumerscheme, organisationunitscheme, dataflow, metadataflow, reportingtaxonomy, provisionagreement, structureset, process, categorisation, contentconstraint, actualconstraint, allowedconstraint, attachmentconstraint, structure]
+        default: none
     accept-encoding:
       in: header
       name: Accept-Encoding
