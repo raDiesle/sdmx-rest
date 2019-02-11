@@ -417,6 +417,8 @@ components:
         The agency maintaining the artefact to be returned. 
         
         It is possible to set more than one agency, using `+` as separator (e.g. BIS+ECB).
+        
+        The special keyword `all` can be used to indicate that artefacts maintained by any maintenance agency should be returned.
       required: true
       schema:
         type: string
@@ -428,6 +430,8 @@ components:
         The id of the artefact to be returned.
         
         It is possible to set more than one id, using `+` as separator (e.g. CL_FREQ+CL_CONF_STATUS).
+        
+        The special keyword `all` can be used to indicate that any artefact of the specified resource type, {agencyID} and {version} should be returned. 
       required: true
       schema:
         type: string
@@ -439,10 +443,14 @@ components:
         The version of the artefact to be returned. 
         
         It is possible to set more than one version, using `+` as separator (e.g. 1.0+2.1).
+        
+        The special keyword `all` can be used to return all versions of the matching resource.
+        
+        The special keyword `latest` can be used to return the latest production version of the matching resource.
       required: true
       schema:
         type: string
-        pattern: '^[\d]+(\.[\d]+)*(\+[\d]+(\.[\d]+)*)*$'
+        pattern: '^(all|latest|[\d]+(\.[\d]+)*(\+[\d]+(\.[\d]+)*)*)$'
     items:
       in: path
       name: itemID
