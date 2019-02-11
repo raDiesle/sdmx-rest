@@ -281,6 +281,48 @@ paths:
           $ref: '#/components/responses/503'
         '510': 
           $ref: '#/components/responses/510'
+  
+  /datastructure/{agencyID}/{resourceID}/{version}:
+    get:
+      summary: 'Returns {version} of the data structure with id {resourceID} managed by {agencyID}'
+      tags: 
+        - Struture queries
+      parameters:
+        - $ref: '#/components/parameters/agencies'
+        - $ref: '#/components/parameters/resourceIDs'
+        - $ref: '#/components/parameters/versions'
+        - $ref: '#/components/parameters/references'
+        - $ref: '#/components/parameters/structDetail'
+        - $ref: '#/components/parameters/accept-encoding'
+        - $ref: '#/components/parameters/accept-language'
+        - $ref: '#/components/parameters/if-modified-since'
+      responses:
+        '200':
+          $ref: '#/components/responses/200-struct'
+        '304':
+          $ref: '#/components/responses/304'
+        '400': 
+          $ref: '#/components/responses/400'
+        '401': 
+          $ref: '#/components/responses/401'
+        '403': 
+          $ref: '#/components/responses/403'
+        '404': 
+          $ref: '#/components/responses/404'
+        '406':
+          $ref: '#/components/responses/406'
+        '413': 
+          $ref: '#/components/responses/413'
+        '414':
+          $ref: '#/components/responses/414'
+        '500': 
+          $ref: '#/components/responses/500'
+        '501': 
+          $ref: '#/components/responses/501'
+        '503': 
+          $ref: '#/components/responses/503'
+        '510': 
+          $ref: '#/components/responses/510'
           
 components:
   parameters:
@@ -374,7 +416,7 @@ components:
       description: |
         The agency maintaining the artefact to be returned. 
         
-        It is possible to set more than one agency, using + as separator (e.g. BIS+ECB).
+        It is possible to set more than one agency, using `+` as separator (e.g. BIS+ECB).
       required: true
       schema:
         type: string
@@ -385,7 +427,7 @@ components:
       description: |
         The id of the artefact to be returned.
         
-        It is possible to set more than one id, using + as separator (e.g. CL_FREQ+CL_CONF_STATUS).
+        It is possible to set more than one id, using `+` as separator (e.g. CL_FREQ+CL_CONF_STATUS).
       required: true
       schema:
         type: string
@@ -396,7 +438,7 @@ components:
       description: | 
         The version of the artefact to be returned. 
         
-        It is possible to set more than one version, using + as separator (e.g. 1.0+2.1).
+        It is possible to set more than one version, using `+` as separator (e.g. 1.0+2.1).
       required: true
       schema:
         type: string
@@ -407,7 +449,7 @@ components:
       description: |
         The id of the item to be returned. 
         
-        It is possible to set more than one id, using + as separator (e.g. A+Q+M).
+        It is possible to set more than one id, using `+` as separator (e.g. A+Q+M).
       required: true
       schema:
         type: string
@@ -568,7 +610,7 @@ components:
       required: false
       schema:
         type: string
-        enum: [none, parents, parentsandsiblings, children, descendants, all, datastructure, metadatastructure, categoryscheme, conceptscheme, codelist, hierarchicalcodelist, organisationscheme, agencyscheme, dataproviderscheme, dataconsumerscheme, organisationunitscheme, dataflow, metadataflow, reportingtaxonomy, provisionagreement, structureset, process, categorisation, contentconstraint, actualconstraint, allowedconstraint, attachmentconstraint, structure]
+        enum: [none, parents, parentsandsiblings, children, descendants, all, datastructure, metadatastructure, categoryscheme, conceptscheme, codelist, hierarchicalcodelist, organisationscheme, agencyscheme, dataproviderscheme, dataconsumerscheme, organisationunitscheme, dataflow, metadataflow, reportingtaxonomy, provisionagreement, structureset, process, categorisation, contentconstraint, actualconstraint, allowedconstraint, attachmentconstraint]
         default: none
     accept-encoding:
       in: header
