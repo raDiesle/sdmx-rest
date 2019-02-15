@@ -16,7 +16,7 @@ servers:
 paths:
   /data/{flow}/{key}/{provider}:
     get:
-      summary: 'Returns data matching {key} provided by {provider} for the statistical domain {flow}'
+      summary: 'Get data'
       tags: 
         - Data queries
       parameters:
@@ -64,7 +64,7 @@ paths:
   
   /datastructure/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the data structure with id {resourceID} managed by {agencyID}'
+      summary: 'Get data structures'
       tags: 
         - Structure queries
       parameters:
@@ -106,7 +106,7 @@ paths:
        
   /metadatastructure/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the metadata structure with id {resourceID} managed by {agencyID}'
+      summary: 'Get metadata structures'
       tags: 
         - Structure queries
       parameters:
@@ -148,7 +148,7 @@ paths:
           
   /dataflow/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the dataflow with id {resourceID} managed by {agencyID}'
+      summary: 'Get dataflows'
       tags: 
         - Structure queries
       parameters:
@@ -190,49 +190,7 @@ paths:
           
   /metadataflow/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the metadadataflow with id {resourceID} managed by {agencyID}'
-      tags: 
-        - Structure queries
-      parameters:
-        - $ref: '#/components/parameters/agencies'
-        - $ref: '#/components/parameters/resourceIDs'
-        - $ref: '#/components/parameters/versions'
-        - $ref: '#/components/parameters/references'
-        - $ref: '#/components/parameters/structDetail'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/accept-language'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200-struct'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '413': 
-          $ref: '#/components/responses/413'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-          
-  /reportingtaxonomy/{agencyID}/{resourceID}/{version}:
-    get:
-      summary: 'Returns {version} of the reporting taxonomy with id {resourceID} managed by {agencyID}'
+      summary: 'Get metadadataflows'
       tags: 
         - Structure queries
       parameters:
@@ -274,7 +232,7 @@ paths:
           
   /provisionagreement/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the provision agreement with id {resourceID} managed by {agencyID}'
+      summary: 'Get provision agreements'
       tags: 
         - Structure queries
       parameters:
@@ -316,7 +274,7 @@ paths:
           
   /structureset/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the structure set with id {resourceID} managed by {agencyID}'
+      summary: 'Get structure sets'
       tags: 
         - Structure queries
       parameters:
@@ -358,7 +316,7 @@ paths:
           
   /process/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the process with id {resourceID} managed by {agencyID}'
+      summary: 'Get processes'
       tags: 
         - Structure queries
       parameters:
@@ -400,7 +358,7 @@ paths:
           
   /categorisation/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the categorisation with id {resourceID} managed by {agencyID}'
+      summary: 'Get categorisations'
       tags: 
         - Structure queries
       parameters:
@@ -442,7 +400,7 @@ paths:
           
   /contentconstraint/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the content constraint with id {resourceID} managed by {agencyID}'
+      summary: 'Get content constraints'
       tags: 
         - Structure queries
       parameters:
@@ -484,7 +442,7 @@ paths:
           
   /actualconstraint/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the actual constraint with id {resourceID} managed by {agencyID}'
+      summary: 'Get actual constraints'
       tags: 
         - Structure queries
       parameters:
@@ -526,7 +484,7 @@ paths:
           
   /allowedconstraint/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the allowed constraint with id {resourceID} managed by {agencyID}'
+      summary: 'Get allowed constraints'
       tags: 
         - Structure queries
       parameters:
@@ -568,7 +526,7 @@ paths:
           
   /attachmentconstraint/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the attachment constraint with id {resourceID} managed by {agencyID}'
+      summary: 'Get attachment constraints'
       tags: 
         - Structure queries
       parameters:
@@ -610,7 +568,7 @@ paths:
           
   /structure/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the structure with id {resourceID} managed by {agencyID}'
+      summary: 'Get structures'
       tags: 
         - Structure queries
       parameters:
@@ -652,7 +610,7 @@ paths:
           
   /conceptscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get concept schemes'
       tags: 
         - Structure queries
       parameters:
@@ -694,7 +652,7 @@ paths:
   
   /codelist/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the codelist with id {resourceID} managed by {agencyID}'
+      summary: 'Get codelists'
       tags: 
         - Structure queries
       parameters:
@@ -736,7 +694,7 @@ paths:
           
   /categoryscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the category scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get category schemes'
       tags: 
         - Structure queries
       parameters:
@@ -778,7 +736,7 @@ paths:
           
   /hierarchicalcodelist/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the hierarchical codelist with id {resourceID} managed by {agencyID}'
+      summary: 'Get hierarchical codelists'
       tags: 
         - Structure queries
       parameters:
@@ -820,7 +778,7 @@ paths:
           
   /organisationscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the organisation scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get organisation schemes'
       tags: 
         - Structure queries
       parameters:
@@ -862,7 +820,7 @@ paths:
           
   /agencyscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the agency scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get agency schemes'
       tags: 
         - Structure queries
       parameters:
@@ -904,7 +862,7 @@ paths:
           
   /dataproviderscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the data provider scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get data provider schemes'
       tags: 
         - Structure queries
       parameters:
@@ -946,7 +904,7 @@ paths:
           
   /dataconsumerscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the data consumer scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get data consumer schemes'
       tags: 
         - Structure queries
       parameters:
@@ -988,7 +946,7 @@ paths:
           
   /organisationunitscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the organisation unit scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get organisation unit schemes'
       tags: 
         - Structure queries
       parameters:
@@ -1030,7 +988,7 @@ paths:
           
   /conceptscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get concepts'
       tags: 
         - Item queries
       parameters:
@@ -1073,7 +1031,7 @@ paths:
   
   /codelist/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the codelist with id {resourceID} managed by {agencyID}'
+      summary: 'Get codes'
       tags: 
         - Item queries
       parameters:
@@ -1116,7 +1074,7 @@ paths:
           
   /categoryscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the category scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get categories'
       tags: 
         - Item queries
       parameters:
@@ -1159,7 +1117,7 @@ paths:
           
   /hierarchicalcodelist/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the hierarchical codelist with id {resourceID} managed by {agencyID}'
+      summary: 'Get hierarchies'
       tags: 
         - Item queries
       parameters:
@@ -1202,7 +1160,7 @@ paths:
           
   /organisationscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the organisation scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get organisations'
       tags: 
         - Item queries
       parameters:
@@ -1245,7 +1203,7 @@ paths:
           
   /agencyscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the agency scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get agencies'
       tags: 
         - Item queries
       parameters:
@@ -1288,7 +1246,7 @@ paths:
           
   /dataproviderscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the data provider scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get data providers'
       tags: 
         - Item queries
       parameters:
@@ -1331,7 +1289,7 @@ paths:
           
   /dataconsumerscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the data consumer scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get data consumers'
       tags: 
         - Item queries
       parameters:
@@ -1374,7 +1332,7 @@ paths:
           
   /organisationunitscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the organisation unit scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Get organisation unit schemes'
       tags: 
         - Item queries
       parameters:
@@ -1417,7 +1375,7 @@ paths:
           
   /schema/{context}/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns an XML schema to validate the matching resource'
+      summary: 'Get XML schemas'
       tags: 
         - Schema queries
       parameters:
