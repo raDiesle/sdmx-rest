@@ -14,146 +14,6 @@ servers:
     url: https://sdw-wsrest.ecb.europa.eu/service
 
 paths:
-  /data/{flow}/all/all:
-    get:
-      summary: 'Returns all data for the statistical domain {flow}'
-      tags: 
-        - Data queries
-      parameters:
-        - $ref: '#/components/parameters/flow'
-        - $ref: '#/components/parameters/startPeriod'
-        - $ref: '#/components/parameters/endPeriod'
-        - $ref: '#/components/parameters/updatedAfter'
-        - $ref: '#/components/parameters/firstNObservations'
-        - $ref: '#/components/parameters/lastNObservations'
-        - $ref: '#/components/parameters/dimensionAtObservation'
-        - $ref: '#/components/parameters/detail'
-        - $ref: '#/components/parameters/includeHistory'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/accept-language'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '413': 
-          $ref: '#/components/responses/413'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-          
-  /data/{flow}/{key}/all:
-    get:
-      summary: 'Returns data matching {key} for the statistical domain {flow}'
-      tags: 
-        - Data queries
-      parameters:
-        - $ref: '#/components/parameters/flow'
-        - $ref: '#/components/parameters/key'
-        - $ref: '#/components/parameters/startPeriod'
-        - $ref: '#/components/parameters/endPeriod'
-        - $ref: '#/components/parameters/updatedAfter'
-        - $ref: '#/components/parameters/firstNObservations'
-        - $ref: '#/components/parameters/lastNObservations'
-        - $ref: '#/components/parameters/dimensionAtObservation'
-        - $ref: '#/components/parameters/detail'
-        - $ref: '#/components/parameters/includeHistory'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/accept-language'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '413': 
-          $ref: '#/components/responses/413'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-          
-  /data/{flow}/all/{provider}:
-    get:
-      summary: 'Returns all data provided by {provider} for the statistical domain {flow}'
-      tags: 
-        - Data queries
-      parameters:
-        - $ref: '#/components/parameters/flow'
-        - $ref: '#/components/parameters/provider'
-        - $ref: '#/components/parameters/startPeriod'
-        - $ref: '#/components/parameters/endPeriod'
-        - $ref: '#/components/parameters/updatedAfter'
-        - $ref: '#/components/parameters/firstNObservations'
-        - $ref: '#/components/parameters/lastNObservations'
-        - $ref: '#/components/parameters/dimensionAtObservation'
-        - $ref: '#/components/parameters/detail'
-        - $ref: '#/components/parameters/includeHistory'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/accept-language'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '413': 
-          $ref: '#/components/responses/413'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-          
   /data/{flow}/{key}/{provider}:
     get:
       summary: 'Returns data matching {key} provided by {provider} for the statistical domain {flow}'
@@ -1618,6 +1478,8 @@ components:
       description: |
         The (possibly partial) **key identifying the data to be returned**. 
         
+        The keyword `all` can be used to indicate that all data belonging to the specified dataflow and provided by the specified provider must be returned.
+        
         The examples below are based on the following key: Frequency, Country, Component of inflation, Unit of measure.
          * `M.DE.000000.ANR`: Full key, matching exactly one series, i.e. the monthly (`M`) rates of change (`ANR`) of overall inflation (`000000`) in Germany (`DE`).
          * `A+M.DE.000000.ANR`: Retrieves both annual and monthly data (`A+M`), matching exactly two series
@@ -1631,6 +1493,8 @@ components:
       name: provider
       description: |
         The **provider of the data** to be retrieved. 
+        
+        The keyword `all` can be used to indicate that all data matching the supplied key and belonging to the specified dataflow and provided by any data provider must be returned.
         
         Examples:
         
@@ -1679,7 +1543,7 @@ components:
       description: |
         The version of the artefact used to generate the schema to be returned.
         
-        The special keyword `latest` can be used to return the latest production version of the matching resource.
+        The keyword `latest` can be used to return the latest production version of the matching resource.
       required: true
       schema:
         type: string
@@ -1692,7 +1556,7 @@ components:
         
         It is possible to set more than one agency, using `+` as separator (e.g. BIS+ECB).
         
-        The special keyword `all` can be used to indicate that artefacts maintained by any maintenance agency should be returned.
+        The keyword `all` can be used to indicate that artefacts maintained by any maintenance agency should be returned.
       required: true
       schema:
         type: string
@@ -1705,7 +1569,7 @@ components:
         
         It is possible to set more than one id, using `+` as separator (e.g. CL_FREQ+CL_CONF_STATUS).
         
-        The special keyword `all` can be used to indicate that any artefact of the specified resource type, {agencyID} and {version} should be returned. 
+        The keyword `all` can be used to indicate that any artefact of the specified resource type, {agencyID} and {version} should be returned. 
       required: true
       schema:
         type: string
@@ -1718,9 +1582,9 @@ components:
         
         It is possible to set more than one version, using `+` as separator (e.g. 1.0+2.1).
         
-        The special keyword `all` can be used to return all versions of the matching resource.
+        The keyword `all` can be used to return all versions of the matching resource.
         
-        The special keyword `latest` can be used to return the latest production version of the matching resource.
+        The keyword `latest` can be used to return the latest production version of the matching resource.
       required: true
       schema:
         type: string
@@ -1733,7 +1597,7 @@ components:
         
         It is possible to set more than one id, using `+` as separator (e.g. A+Q+M).
         
-        The special keyword `all` can be used to return all items of the matching resource.
+        The keyword `all` can be used to return all items of the matching resource.
       required: true
       schema:
         type: string
