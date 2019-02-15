@@ -835,7 +835,7 @@ paths:
   
   /codelist/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the codelist with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -878,7 +878,7 @@ paths:
           
   /categoryscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the category scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -921,7 +921,7 @@ paths:
           
   /hierarchicalcodelist/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the hierarchical codelist with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -964,7 +964,7 @@ paths:
           
   /organisationscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the organisation scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -1007,7 +1007,7 @@ paths:
           
   /agencyscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the agency scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -1050,7 +1050,7 @@ paths:
           
   /dataproviderscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the data provider scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -1093,7 +1093,7 @@ paths:
           
   /dataconsumerscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the data consumer scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -1136,50 +1136,7 @@ paths:
           
   /organisationunitscheme/{agencyID}/{resourceID}/{version}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
-      tags: 
-        - Structure queries
-      parameters:
-        - $ref: '#/components/parameters/agencies'
-        - $ref: '#/components/parameters/resourceIDs'
-        - $ref: '#/components/parameters/versions'
-        - $ref: '#/components/parameters/items'
-        - $ref: '#/components/parameters/references'
-        - $ref: '#/components/parameters/structDetail'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/accept-language'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200-struct'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '413': 
-          $ref: '#/components/responses/413'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-          
-  /reportingtxaonomy/{agencyID}/{resourceID}/{version}:
-    get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the organisation unit scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Structure queries
       parameters:
@@ -1265,7 +1222,7 @@ paths:
   
   /codelist/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the codelist with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1308,7 +1265,7 @@ paths:
           
   /categoryscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the category scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1351,7 +1308,7 @@ paths:
           
   /hierarchicalcodelist/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the hierarchical codelist with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1394,7 +1351,7 @@ paths:
           
   /organisationscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the organisation scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1437,7 +1394,7 @@ paths:
           
   /agencyscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the agency scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1480,7 +1437,7 @@ paths:
           
   /dataproviderscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the data provider scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1523,7 +1480,7 @@ paths:
           
   /dataconsumerscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the data consumer scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
@@ -1566,50 +1523,7 @@ paths:
           
   /organisationunitscheme/{agencyID}/{resourceID}/{version}/{itemID}:
     get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
-      tags: 
-        - Item scheme queries
-      parameters:
-        - $ref: '#/components/parameters/agencies'
-        - $ref: '#/components/parameters/resourceIDs'
-        - $ref: '#/components/parameters/versions'
-        - $ref: '#/components/parameters/items'
-        - $ref: '#/components/parameters/references'
-        - $ref: '#/components/parameters/structDetail'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/accept-language'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200-struct'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '413': 
-          $ref: '#/components/responses/413'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-          
-  /reportingtxaonomy/{agencyID}/{resourceID}/{version}/{itemID}:
-    get:
-      summary: 'Returns {version} of the concept scheme with id {resourceID} managed by {agencyID}'
+      summary: 'Returns {version} of the organisation unit scheme with id {resourceID} managed by {agencyID}'
       tags: 
         - Item scheme queries
       parameters:
