@@ -1397,6 +1397,8 @@ components:
         The id of the item to be returned. 
         
         It is possible to set more than one id, using `+` as separator (e.g. A+Q+M).
+        
+        The special keyword `all` can be used to return all items of the matching resource.
       required: true
       schema:
         type: string
