@@ -202,46 +202,6 @@ paths:
         '510': 
           $ref: '#/components/responses/510'
   
-  /schema/{context}/{agencyID}/{resourceID}/{version}:
-    get:
-      summary: 'Returns an XML schema to validate the matching resource'
-      tags: 
-        - Schema queries
-      parameters:
-        - $ref: '#/components/parameters/context'
-        - $ref: '#/components/parameters/agencyID'
-        - $ref: '#/components/parameters/resourceID'
-        - $ref: '#/components/parameters/version'
-        - $ref: '#/components/parameters/dimensionAtObservation'
-        - $ref: '#/components/parameters/explicitMeasure'
-        - $ref: '#/components/parameters/accept-encoding'
-        - $ref: '#/components/parameters/if-modified-since'
-      responses:
-        '200':
-          $ref: '#/components/responses/200-schemas'
-        '304':
-          $ref: '#/components/responses/304'
-        '400': 
-          $ref: '#/components/responses/400'
-        '401': 
-          $ref: '#/components/responses/401'
-        '403': 
-          $ref: '#/components/responses/403'
-        '404': 
-          $ref: '#/components/responses/404'
-        '406':
-          $ref: '#/components/responses/406'
-        '414':
-          $ref: '#/components/responses/414'
-        '500': 
-          $ref: '#/components/responses/500'
-        '501': 
-          $ref: '#/components/responses/501'
-        '503': 
-          $ref: '#/components/responses/503'
-        '510': 
-          $ref: '#/components/responses/510'
-  
   /datastructure/{agencyID}/{resourceID}/{version}:
     get:
       summary: 'Returns {version} of the data structure with id {resourceID} managed by {agencyID}'
@@ -828,7 +788,47 @@ paths:
         '503': 
           $ref: '#/components/responses/503'
         '510': 
-          $ref: '#/components/responses/510'  
+          $ref: '#/components/responses/510'
+          
+  /schema/{context}/{agencyID}/{resourceID}/{version}:
+    get:
+      summary: 'Returns an XML schema to validate the matching resource'
+      tags: 
+        - Schema queries
+      parameters:
+        - $ref: '#/components/parameters/context'
+        - $ref: '#/components/parameters/agencyID'
+        - $ref: '#/components/parameters/resourceID'
+        - $ref: '#/components/parameters/version'
+        - $ref: '#/components/parameters/dimensionAtObservation'
+        - $ref: '#/components/parameters/explicitMeasure'
+        - $ref: '#/components/parameters/accept-encoding'
+        - $ref: '#/components/parameters/if-modified-since'
+      responses:
+        '200':
+          $ref: '#/components/responses/200-schemas'
+        '304':
+          $ref: '#/components/responses/304'
+        '400': 
+          $ref: '#/components/responses/400'
+        '401': 
+          $ref: '#/components/responses/401'
+        '403': 
+          $ref: '#/components/responses/403'
+        '404': 
+          $ref: '#/components/responses/404'
+        '406':
+          $ref: '#/components/responses/406'
+        '414':
+          $ref: '#/components/responses/414'
+        '500': 
+          $ref: '#/components/responses/500'
+        '501': 
+          $ref: '#/components/responses/501'
+        '503': 
+          $ref: '#/components/responses/503'
+        '510': 
+          $ref: '#/components/responses/510'
           
 components:
   parameters:
